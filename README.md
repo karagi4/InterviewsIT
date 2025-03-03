@@ -63,9 +63,19 @@ https://www.opennet.ru/base/net/tcpdump_explore.txt.html - tcpdump
 https://habr.com/ru/company/alexhost/blog/531170/ - tcpdump
 
 ## Рассказ о себе
-апапа
-апапа
-паап
+
+**Стек Backend**:  
+Сборщик Apache Maven  
+Java (openjdk17 набор тулов Development Kit совместимый с Java SE стандарт)
+
+**Стек Front**:  
+Платформа/сервер исполнения JavaScript Node.js  
+Менеджер пакетов npm
+
+**Стек DevOPS:**  
+Оркестратор OpenShift/K8s  
+Конвейер CI/CD Jenkins (программное обеспечение)  
+ЯП Groovy
 
 ## Мои вопросы к интервьюеру
 - Эта позиция, на которую вы меня собеседуете - новая, или я заменю старого сотрудника? Чем не подошел старый сотрудник?
