@@ -64,18 +64,7 @@ https://habr.com/ru/company/alexhost/blog/531170/ - tcpdump
 
 ## Рассказ о себе
 
-**Стек Backend**:  
-Сборщик Apache Maven  
-Java (openjdk17 набор тулов Development Kit совместимый с Java SE стандарт)
-
-**Стек Front**:  
-Платформа/сервер исполнения JavaScript Node.js  
-Менеджер пакетов npm
-
-**Стек DevOPS:**  
-Оркестратор OpenShift/K8s  
-Конвейер CI/CD Jenkins (программное обеспечение)  
-ЯП Groovy
+**Ссылка на gist:** https://gist.github.com/karagi4/587dea03357bdcb32093caf46946bf0f  
 
 ## Мои вопросы к интервьюеру
 - Эта позиция, на которую вы меня собеседуете - новая, или я заменю старого сотрудника? Чем не подошел старый сотрудник?
