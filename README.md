@@ -25,16 +25,16 @@
     - [Особенности работы:](#%D0%BE%D1%81%D0%BE%D0%B1%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B)
     - [Преимущества использования Network Policies:](#%D0%BF%D1%80%D0%B5%D0%B8%D0%BC%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-network-policies)
     - [Ограничения Network Policies:](#%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-network-policies)
-    - [Заключение:](#%D0%B7%D0%B0%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5)
-- [Общие вопросы по Kubernetes](#%D0%BE%D0%B1%D1%89%D0%B8%D0%B5-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B-%D0%BF%D0%BE-kubernetes)
-    - [Сущности Kubernetes StatefulSets/Daemonset/Operator](#%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B8-kubernetes-statefulsetsdaemonsetoperator)
-    - [Как поды назначаются на ноды](#%D0%BA%D0%B0%D0%BA-%D0%BF%D0%BE%D0%B4%D1%8B-%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B0%D1%8E%D1%82%D1%81%D1%8F-%D0%BD%D0%B0-%D0%BD%D0%BE%D0%B4%D1%8B)
-    - [Какие бывают Пробы](#%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5-%D0%B1%D1%8B%D0%B2%D0%B0%D1%8E%D1%82-%D0%BF%D1%80%D0%BE%D0%B1%D1%8B)
-    - [Как прокидывается файл из инит контейнера](#%D0%BA%D0%B0%D0%BA-%D0%BF%D1%80%D0%BE%D0%BA%D0%B8%D0%B4%D1%8B%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB-%D0%B8%D0%B7-%D0%B8%D0%BD%D0%B8%D1%82-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0)
-    - [Как выбирается мастер в Kubernetes?](#%D0%BA%D0%B0%D0%BA-%D0%B2%D1%8B%D0%B1%D0%B8%D1%80%D0%B0%D0%B5%D1%82%D1%81%D1%8F-%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%B2-kubernetes)
-    - [По какому протоколу работает API Kubernetes?](#%D0%BF%D0%BE-%D0%BA%D0%B0%D0%BA%D0%BE%D0%BC%D1%83-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D1%83-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82-api-kubernetes)
+    - [Заключение](#%D0%B7%D0%B0%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5)
+    - [Общие вопросы по Kubernetes](#%D0%BE%D0%B1%D1%89%D0%B8%D0%B5-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B-%D0%BF%D0%BE-kubernetes)
+        - [Сущности Kubernetes StatefulSets/Daemonset/Operator](#%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D0%B8-kubernetes-statefulsetsdaemonsetoperator)
+        - [Как поды назначаются на ноды](#%D0%BA%D0%B0%D0%BA-%D0%BF%D0%BE%D0%B4%D1%8B-%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B0%D1%8E%D1%82%D1%81%D1%8F-%D0%BD%D0%B0-%D0%BD%D0%BE%D0%B4%D1%8B)
+        - [Какие бывают Пробы](#%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5-%D0%B1%D1%8B%D0%B2%D0%B0%D1%8E%D1%82-%D0%BF%D1%80%D0%BE%D0%B1%D1%8B)
+        - [Как прокидывается файл из инит контейнера](#%D0%BA%D0%B0%D0%BA-%D0%BF%D1%80%D0%BE%D0%BA%D0%B8%D0%B4%D1%8B%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB-%D0%B8%D0%B7-%D0%B8%D0%BD%D0%B8%D1%82-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0)
+        - [Как выбирается мастер в Kubernetes?](#%D0%BA%D0%B0%D0%BA-%D0%B2%D1%8B%D0%B1%D0%B8%D1%80%D0%B0%D0%B5%D1%82%D1%81%D1%8F-%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%B2-kubernetes)
+        - [По какому протоколу работает API Kubernetes?](#%D0%BF%D0%BE-%D0%BA%D0%B0%D0%BA%D0%BE%D0%BC%D1%83-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D1%83-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82-api-kubernetes)
     - [Восстановление etcd disaster recovery:](#%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-etcd-disaster-recovery)
-    - [Два слова про REST](#%D0%B4%D0%B2%D0%B0-%D1%81%D0%BB%D0%BE%D0%B2%D0%B0-%D0%BF%D1%80%D0%BE-rest)
+        - [Два слова про REST](#%D0%B4%D0%B2%D0%B0-%D1%81%D0%BB%D0%BE%D0%B2%D0%B0-%D0%BF%D1%80%D0%BE-rest)
 - [Linux](#linux)
     - [Команды дебага Linux](#%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B-%D0%B4%D0%B5%D0%B1%D0%B0%D0%B3%D0%B0-linux)
     - [Методы мониторинга](#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%B0)
@@ -416,13 +416,13 @@ docker build -t avmaksimov/href-counter:latest .
 
 ---
 
-### **Заключение:**
+### **Заключение**
 Network Policies в Kubernetes — это мощный инструмент для управления сетевым трафиком и изоляции подов. Они позволяют контролировать как входящие, так и исходящие соединения, обеспечивая безопасность и управляемость на сетевом уровне. Для их работы требуется CNI-плагин с поддержкой Network Policies, а правила задаются с использованием меток и диапазонов IP-адресов.
 
 ---
-## Общие вопросы по Kubernetes
+### Общие вопросы по Kubernetes
 
-### Сущности Kubernetes (StatefulSets/Daemonset/Operator)
+#### Сущности Kubernetes (StatefulSets/Daemonset/Operator)
   - `StatefulSets`: Штука, описывающая где будут крутиться `Pods` с данными. [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
   - `Daemonset`: Гарантирует, что все (или некоторые по .spec.template.spec.{nodeSelector или affinity}) узлы запускают копию `Pod`
   - `Operator`: (профессия) — группа профессий по управлению работой оборудования (установок) различного вида и назначения. Шутка. `Операторы` - это программные расширения `Kubernetes`, которые используют пользовательские ресурсы для управления приложениями и их компонентами.
@@ -434,31 +434,31 @@ Network Policies в Kubernetes — это мощный инструмент дл
     - имитация сбоя всего кластера или его части для проверки его устойчивости;
     - выбор лидера для распределенного приложения без внутреннего участника.
 
-### Как поды назначаются на ноды
+#### Как поды назначаются на ноды
   Назначение подов на ноды происходит по одному из следующих методов:
     - `nodeSelector`: выбор ноды по `node labels`. Kubernetes будет планировать размещение бода только на тех узлах, которые имеют все указанные вами метки.
     - `Affinity and anti-affinity`: можно указать, что правило является мягким или предпочтительным, чтобы планировщик все равно запланировал под, даже если он не может найти подходящий узел, например.
     - `nodeName`
     - `Pod topology spread constraints`: ограничения на распространение топологии Подов
 
-### Какие бывают Пробы
+#### Какие бывают Пробы
   - `livenessProbe`: Показывает, запущен ли контейнер;
   - `readinessProbe`: Указывает, готов ли контейнер отвечать на запросы;
   - `startupProbe`: Указывает, запущено ли приложение внутри контейнера.
   > Нужно выбирать или `livenessProbe` + `readinessProbe`, или `startupProbe`. Если с пробами что-то не так, `kubelet` смотрит в `restartPolicy`, а они бывают трех видов - `Always, OnFailure, and Never`
 
-### Как прокидывается файл из инит контейнера
+#### Как прокидывается файл из инит контейнера
     Ответ:  Прокидывание файлов из init-контейнера в основной контейнер возможно с использованием общих **Volumes**
   - Типы Volumes, которые можно использовать
 
-### Как выбирается мастер в Kubernetes?
+#### Как выбирается мастер в Kubernetes?
   Ответ: По протоколу RAFT
     Основной механизм — Lease API:
       * Kubernetes API предоставляет объект типа **Lease** (часть Coordination API).
       * Кандидаты на лидерство периодически пытаются обновить объект **Lease** в **etcd**, который служит индикатором текущего лидера.
       * Узел, который успешно обновляет **Lease**, становится лидером.
 
-### По какому протоколу работает API Kubernetes?
+#### По какому протоколу работает API Kubernetes?
   Ответ: OpenAPI (REST) HTTP/HTTPS
 
 ### Восстановление etcd (disaster recovery):
@@ -466,7 +466,7 @@ Network Policies в Kubernetes — это мощный инструмент дл
     - [ETCD Disaster recovery](https://etcd.io/docs/v3.3/op-guide/recovery/)
     > Сжатие + дефрагментация + правильный мониторинг — основа обслуживания вашего кластера etcd.
 
-### Два слова про `REST`
+#### Два слова про `REST`
     Обычно существует 2 поля объекта: `spec` и `status`.
     В поле `spec` указывается требуемое состояние (описание характеристик, которые должны быть у объекта).
     `status` описывает текущее состояние объекта
