@@ -96,7 +96,7 @@ https://habr.com/ru/company/alexhost/blog/531170/ - tcpdump
 
 ---
 ## Ansible
-### Раздел про Ansible [тут](https://github.com/karagi4/InterviewsIT/blob/f1e73371f2c2b261eb4a11f5e997f13d11bfd341/Ansible)
+### Раздел про Ansible [тут](https://github.com/karagi4/InterviewsIT/blob/my_branch/Ansible)
 
 
 ---
@@ -484,7 +484,7 @@ Network Policies в Kubernetes — это мощный инструмент дл
 
 ---
 ## Linux
-### Все про Linux [тут](https://github.com/karagi4/InterviewsIT/blob/1b764520364c091d9ac277188c43735bbc997727/Linux%20basic%20questions)
+### Все про Linux [тут](https://github.com/karagi4/InterviewsIT/blob/my_branch/Linux%20basic%20questions)
 ### Команды дебага Linux
 ```bash
   lsof -p # поиск удаленных файлов, если процесс их еще держит
